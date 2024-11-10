@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - My Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="reg-container">
+        <h1>Register for My Blog</h1>
+        <form action="register.php" method="post">
+            <label>Username:</label>
+            <input type="text" name="username" required>
+            <label>Password:</label>
+            <input type="password" name="password" required>
+            <label>Confirm Password:</label>
+            <input type="password" name="confirm_password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <?php if (isset($_SESSION['error'])): ?>
+        <p class="error"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
+    <?php endif; ?>
+
+</body>
+</html>
